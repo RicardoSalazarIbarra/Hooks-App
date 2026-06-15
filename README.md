@@ -1,75 +1,128 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Hooks Lab
 
-Currently, two official plugins are available:
+### Galería de ejercicios prácticos con React y TypeScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-## React Compiler
+Proyecto de aprendizaje que reúne ejemplos desarrollados durante un curso de Udemy
+y ejercicios propios para reforzar mis conocimientos de React.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+</div>
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## Sobre el proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Este repositorio funciona como laboratorio personal y evidencia de mi progreso en
+React. Cada sección presenta un ejemplo interactivo relacionado con hooks,
+manejo de estado, efectos, referencias, consumo de APIs y reutilización de lógica.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Además de acompañar mi formación, el proyecto me permite practicar y documentar
+los conocimientos que utilizaré como preparación para futuras evaluaciones y
+certificaciones.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+> [!NOTE]
+> Este es un proyecto educativo independiente. No representa una certificación
+> oficial ni está afiliado o respaldado por Udemy.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Ejemplos incluidos
+
+| Ejemplo | Conceptos principales |
+| --- | --- |
+| Semáforo manual | `useState`, eventos y renderizado condicional |
+| Semáforo automático | `useEffect`, intervalos y limpieza de efectos |
+| Semáforo con Custom Hook | Extracción y reutilización de lógica |
+| Explorador Pokémon | Consumo de API, estados de carga y contador |
+| Control de foco | `useRef` y acceso a elementos del DOM |
+| Galería de ejemplos | Navegación por hash y componentes dinámicos |
+
+La galería permite cambiar entre ejercicios sin editar ni comentar código.
+También genera rutas compartibles como `#use-state`, `#pokemon` y `#use-ref`.
+
+## Tecnologías
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- ESLint
+- PokéAPI
+
+## Ejecutar localmente
+
+### Requisitos
+
+- Node.js 20 o superior
+- npm
+
+### Instalación
+
+```bash
+git clone <URL-DEL-REPOSITORIO>
+cd hooks-app
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Abre la dirección que muestre Vite, normalmente:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+http://localhost:5173
 ```
+
+## Comandos disponibles
+
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Genera la versión de producción |
+| `npm run lint` | Analiza el código con ESLint |
+| `npm run preview` | Previsualiza el build de producción |
+
+## Estructura principal
+
+```text
+src/
+├── 01-useState/       # Ejercicios de estado
+├── 02-useEffect/      # Ejercicios de efectos
+├── 03-examples/       # Ejemplos que combinan varios conceptos
+├── 04-useRef/         # Ejercicios con referencias
+├── hooks/             # Custom Hooks reutilizables
+├── ExamplesGallery.tsx
+└── main.tsx
+```
+
+## Objetivos de aprendizaje
+
+- Comprender el ciclo de renderizado de los componentes.
+- Administrar estado local con `useState`.
+- Ejecutar y limpiar efectos correctamente con `useEffect`.
+- Interactuar con elementos del DOM mediante `useRef`.
+- Crear Custom Hooks para separar responsabilidades.
+- Consumir APIs y representar estados de carga y error.
+- Organizar ejemplos en una aplicación fácil de explorar y compartir.
+
+## Próximos pasos
+
+- [ ] Agregar ejemplos de `useMemo` y `useCallback`.
+- [ ] Incorporar `useReducer` y Context API.
+- [ ] Añadir pruebas automatizadas.
+- [ ] Mejorar el manejo de errores de las peticiones.
+- [ ] Publicar una demo en línea.
+
+## Créditos
+
+Parte de los conceptos y ejercicios se basa en el curso de React que estoy
+realizando en Udemy. La organización de la galería, las adaptaciones y la
+documentación forman parte de mi práctica personal.
+
+---
+
+<div align="center">
+  Hecho como parte de mi proceso de aprendizaje continuo en desarrollo frontend.
+</div>
