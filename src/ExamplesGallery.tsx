@@ -5,6 +5,7 @@ import { TrafficLightWithEffect } from './02-useEffect/TrafficLightWithEffect'
 import { TrafficLightWithHook } from './02-useEffect/TrafficLightWithHook'
 import { PokemonPage } from './03-examples/PokemonPage'
 import { FocusScreen } from './04-useRef/FocusScreen'
+import { TasksApp } from './05-useReducer/TaskApp'
 
 type Example = {
   id: string
@@ -50,6 +51,12 @@ const examples: Example[] = [
     description: 'Control del foco de un input',
     component: FocusScreen,
   },
+  {
+    id: 'use-reducer',
+    title: 'useReducer',
+    description: 'Lista de Tareas | To do',
+    component: TasksApp,
+  },
 ]
 
 const getExampleFromHash = () => {
@@ -92,17 +99,15 @@ export const ExamplesGallery = () => {
                   href={`#${example.id}`}
                   title={example.description}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`shrink-0 rounded-lg border px-4 py-2 text-left transition cursor-pointer ${
-                    isActive
-                      ? 'border-cyan-400 bg-cyan-400 text-slate-950'
-                      : 'border-white/15 bg-white/5 text-slate-200 hover:border-cyan-400/60 hover:bg-white/10'
-                  }`}
+                  className={`shrink-0 rounded-lg border px-4 py-2 text-left transition cursor-pointer ${isActive
+                    ? 'border-cyan-400 bg-cyan-400 text-slate-950'
+                    : 'border-white/15 bg-white/5 text-slate-200 hover:border-cyan-400/60 hover:bg-white/10'
+                    }`}
                 >
                   <span className="block text-sm font-semibold">{example.title}</span>
                   <span
-                    className={`hidden text-xs sm:block ${
-                      isActive ? 'text-slate-700' : 'text-slate-400'
-                    }`}
+                    className={`hidden text-xs sm:block ${isActive ? 'text-slate-700' : 'text-slate-400'
+                      }`}
                   >
                     {example.description}
                   </span>
