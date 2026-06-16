@@ -6,6 +6,8 @@ import { TrafficLightWithHook } from './02-useEffect/TrafficLightWithHook'
 import { PokemonPage } from './03-examples/PokemonPage'
 import { FocusScreen } from './04-useRef/FocusScreen'
 import { TasksApp } from './05-useReducer/TaskApp'
+import { ScrambleWords } from './05-useReducer/ScrambleWords'
+import { ScrambleWordsUseState } from './05-useReducer/ScrambleWordsUseState'
 
 type Example = {
   id: string
@@ -54,8 +56,20 @@ const examples: Example[] = [
   {
     id: 'use-reducer',
     title: 'useReducer',
-    description: 'Lista de Tareas | To do',
+    description: 'Lista de Tareas con Reducer y LocalStorage',
     component: TasksApp,
+  },
+  {
+    id: 'scramble-us-state',
+    title: 'Scramble useState',
+    description: 'Juego de Palabras con useState',
+    component: ScrambleWords,
+  },
+  {
+    id: 'scramble-reducer',
+    title: 'Scramble Reducer',
+    description: 'Juego de Palabras con Reducer',
+    component: ScrambleWordsUseState,
   },
 ]
 

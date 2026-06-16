@@ -20,7 +20,8 @@ y ejercicios propios para reforzar mis conocimientos de React.
 
 Este repositorio funciona como laboratorio personal y evidencia de mi progreso en
 React. Cada sección presenta un ejemplo interactivo relacionado con hooks,
-manejo de estado, efectos, referencias, consumo de APIs y reutilización de lógica.
+manejo de estado, efectos, referencias, consumo de APIs, reducers y reutilización
+de lógica.
 
 Además de acompañar mi formación, el proyecto me permite practicar y documentar
 los conocimientos que utilizaré como preparación para futuras evaluaciones y
@@ -39,10 +40,14 @@ certificaciones.
 | Semáforo con Custom Hook | Extracción y reutilización de lógica |
 | Explorador Pokémon | Consumo de API, estados de carga y contador |
 | Control de foco | `useRef` y acceso a elementos del DOM |
+| Lista de tareas | `useReducer`, acciones, estado derivado, `localStorage` y validación con Zod |
+| Palabras desordenadas con `useState` | Manejo de múltiples estados locales, validación de respuestas y reinicio de juego |
+| Palabras desordenadas con `useReducer` | Centralización de la lógica del juego mediante reducer y acciones |
 | Galería de ejemplos | Navegación por hash y componentes dinámicos |
 
 La galería permite cambiar entre ejercicios sin editar ni comentar código.
-También genera rutas compartibles como `#use-state`, `#pokemon` y `#use-ref`.
+También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
+`#use-reducer`, `#scramble-us-state` y `#scramble-reducer`.
 
 ## Tecnologías
 
@@ -50,6 +55,10 @@ También genera rutas compartibles como `#use-state`, `#pokemon` y `#use-ref`.
 - TypeScript
 - Vite
 - Tailwind CSS
+- shadcn/ui
+- Lucide React
+- Zod
+- Canvas Confetti
 - ESLint
 - PokéAPI
 
@@ -88,13 +97,16 @@ http://localhost:5173
 
 ```text
 src/
-├── 01-useState/       # Ejercicios de estado
-├── 02-useEffect/      # Ejercicios de efectos
-├── 03-examples/       # Ejemplos que combinan varios conceptos
-├── 04-useRef/         # Ejercicios con referencias
-├── hooks/             # Custom Hooks reutilizables
-├── ExamplesGallery.tsx
-└── main.tsx
+|-- 01-useState/       # Ejercicios de estado
+|-- 02-useEffect/      # Ejercicios de efectos
+|-- 03-examples/       # Ejemplos que combinan varios conceptos
+|-- 04-useRef/         # Ejercicios con referencias
+|-- 05-useReducer/     # Ejercicios con reducers y acciones
+|   |-- reducer/       # Reducers y estados iniciales
+|-- components/ui/     # Componentes base de shadcn/ui
+|-- hooks/             # Custom Hooks reutilizables
+|-- ExamplesGallery.tsx
+`-- main.tsx
 ```
 
 ## Objetivos de aprendizaje
@@ -104,13 +116,16 @@ src/
 - Ejecutar y limpiar efectos correctamente con `useEffect`.
 - Interactuar con elementos del DOM mediante `useRef`.
 - Crear Custom Hooks para separar responsabilidades.
+- Modelar estados más complejos con `useReducer`.
+- Definir acciones para actualizar el estado de forma predecible.
+- Persistir datos en `localStorage` y validar la información recuperada.
 - Consumir APIs y representar estados de carga y error.
 - Organizar ejemplos en una aplicación fácil de explorar y compartir.
 
 ## Próximos pasos
 
 - [ ] Agregar ejemplos de `useMemo` y `useCallback`.
-- [ ] Incorporar `useReducer` y Context API.
+- [ ] Incorporar Context API.
 - [ ] Añadir pruebas automatizadas.
 - [ ] Mejorar el manejo de errores de las peticiones.
 - [ ] Publicar una demo en línea.
