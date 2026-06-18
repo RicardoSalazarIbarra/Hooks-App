@@ -43,11 +43,14 @@ certificaciones.
 | Lista de tareas | `useReducer`, acciones, estado derivado, `localStorage` y validación con Zod |
 | Palabras desordenadas con `useState` | Manejo de múltiples estados locales, validación de respuestas y reinicio de juego |
 | Palabras desordenadas con `useReducer` | Centralización de la lógica del juego mediante reducer y acciones |
+| React Memo | `React.memo`, props, callbacks memorizados y prevención de renderizados innecesarios |
+| Contador con `useMemo` | `useMemo`, cálculos costosos, dependencias y optimización de renderizado |
 | Galería de ejemplos | Navegación por hash y componentes dinámicos |
 
 La galería permite cambiar entre ejercicios sin editar ni comentar código.
 También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
-`#use-reducer`, `#scramble-us-state` y `#scramble-reducer`.
+`#use-reducer`, `#scramble-us-state`, `#scramble-reducer`, `#react-memo` y
+`#use-Memo`.
 
 ## Tecnologías
 
@@ -103,6 +106,8 @@ src/
 |-- 04-useRef/         # Ejercicios con referencias
 |-- 05-useReducer/     # Ejercicios con reducers y acciones
 |   |-- reducer/       # Reducers y estados iniciales
+|-- 06-memos/          # Ejercicios de memorización y optimización
+|   |-- ui/            # Componentes memorizados para los ejemplos
 |-- components/ui/     # Componentes base de shadcn/ui
 |-- hooks/             # Custom Hooks reutilizables
 |-- ExamplesGallery.tsx
@@ -119,12 +124,13 @@ src/
 - Modelar estados más complejos con `useReducer`.
 - Definir acciones para actualizar el estado de forma predecible.
 - Persistir datos en `localStorage` y validar la información recuperada.
+- Optimizar renderizados con `React.memo`, `useMemo` y `useCallback`.
+- Identificar cuándo una función o cálculo debe memorizarse según sus dependencias.
 - Consumir APIs y representar estados de carga y error.
 - Organizar ejemplos en una aplicación fácil de explorar y compartir.
 
 ## Próximos pasos
 
-- [ ] Agregar ejemplos de `useMemo` y `useCallback`.
 - [ ] Incorporar Context API.
 - [ ] Añadir pruebas automatizadas.
 - [ ] Mejorar el manejo de errores de las peticiones.
