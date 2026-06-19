@@ -45,12 +45,14 @@ certificaciones.
 | Palabras desordenadas con `useReducer` | Centralización de la lógica del juego mediante reducer y acciones |
 | React Memo | `React.memo`, props, callbacks memorizados y prevención de renderizados innecesarios |
 | Contador con `useMemo` | `useMemo`, cálculos costosos, dependencias y optimización de renderizado |
+| Comentarios optimistas | `useOptimistic`, `useTransition`, actualización optimista y reversión de estado |
+| Información de cliente | `use`, `Suspense`, promesas, fallback de carga y datos asíncronos |
 | Galería de ejemplos | Navegación por hash y componentes dinámicos |
 
 La galería permite cambiar entre ejercicios sin editar ni comentar código.
 También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
 `#use-reducer`, `#scramble-us-state`, `#scramble-reducer`, `#react-memo` y
-`#use-Memo`.
+`#use-memo`, `#use-optimistic` y `#use-suspense`.
 
 ## Tecnologías
 
@@ -62,6 +64,7 @@ También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
 - Lucide React
 - Zod
 - Canvas Confetti
+- Sonner
 - ESLint
 - PokéAPI
 
@@ -108,6 +111,9 @@ src/
 |   |-- reducer/       # Reducers y estados iniciales
 |-- 06-memos/          # Ejercicios de memorización y optimización
 |   |-- ui/            # Componentes memorizados para los ejemplos
+|-- 07-useOptimistic/  # Ejercicio de UI optimista con comentarios
+|-- 08-use-suspense/   # Ejercicio de Suspense y carga de datos
+|   |-- api/           # Acciones simuladas para obtener información
 |-- components/ui/     # Componentes base de shadcn/ui
 |-- hooks/             # Custom Hooks reutilizables
 |-- ExamplesGallery.tsx
@@ -126,6 +132,8 @@ src/
 - Persistir datos en `localStorage` y validar la información recuperada.
 - Optimizar renderizados con `React.memo`, `useMemo` y `useCallback`.
 - Identificar cuándo una función o cálculo debe memorizarse según sus dependencias.
+- Crear experiencias de UI optimista con `useOptimistic` y manejar reversión de estado.
+- Cargar datos asíncronos con `use`, `Suspense` y fallbacks de espera.
 - Consumir APIs y representar estados de carga y error.
 - Organizar ejemplos en una aplicación fácil de explorar y compartir.
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, type ComponentType } from 'react'
+import { Suspense, useEffect, useState, type ComponentType } from 'react'
 import { ChevronDown, FlaskConical, Layers } from 'lucide-react'
 import { HooksApp } from './HooksApp'
 import { TrafficLight } from './01-useState/TrafficLight'
@@ -11,6 +11,9 @@ import { ScrambleWords } from './05-useReducer/ScrambleWords'
 import { ScrambleWordsUseState } from './05-useReducer/ScrambleWordsUseState'
 import { MemoHook } from './06-memos/MemoHook'
 import { MemoCounter } from './06-memos/MemoCounter'
+import { InstagromApp } from './07-useOptimistic/InstagromApp'
+import { ClientInformation } from './08-use-suspense/ClientInformation'
+import { getUserAction } from './08-use-suspense/api/get-user.action'
 
 type Example = {
   id: string
@@ -92,11 +95,33 @@ const examples: Example[] = [
     group: 'Optimización',
   },
   {
-    id: 'use-Memo',
+    id: 'use-memo',
     title: 'useMemo',
     description: 'Contador con cálculo memorizado',
     component: MemoCounter,
     group: 'Optimización',
+  },
+  {
+    id: 'use-optimistic',
+    title: 'useOptimistic',
+    description: 'Comentarios optimistas con reversión de estado',
+    component: InstagromApp,
+    group: 'React 19',
+  },
+  {
+    id: 'use-suspense',
+    title: 'use + Suspense',
+    description: 'Carga asíncrona de información de usuario',
+    component: () =>
+      <Suspense fallback={
+        <div className='bg-gradient flex flex-col'>
+          <h1 className='text-2xl'>Cargando...</h1>
+        </div>
+      }>
+        <ClientInformation getUser={getUserAction(1000)} />
+      </Suspense>,
+    // component: () => <ClientInformation id={100} />,
+    group: 'React 19',
   },
 ]
 
@@ -141,7 +166,7 @@ export const ExamplesGallery = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex w-fit items-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300">
+              <div className="flex w-fit items-center gap-2 rounded-md border border-white/10 bg-white/4 px-3 py-2 text-sm text-slate-300">
                 <Layers size={15} aria-hidden="true" />
                 <span className="font-semibold text-white">{examples.length}</span>
                 <span>ejercicios</span>
@@ -166,7 +191,7 @@ export const ExamplesGallery = () => {
             {isMenuOpen && (
               <nav
                 id="examples-menu"
-                className="absolute right-0 top-[calc(100%+0.75rem)] grid max-h-[70vh] w-full gap-2 overflow-y-auto rounded-lg border border-white/10 bg-slate-900 p-3 shadow-2xl shadow-black/50 sm:w-[420px] sm:grid-cols-2"
+                className="absolute right-0 top-[calc(100%+0.75rem)] grid max-h-[70vh] w-full gap-2 overflow-y-auto rounded-lg border border-white/10 bg-slate-900 p-3 shadow-2xl shadow-black/50 sm:w-105 sm:grid-cols-2"
                 aria-label="Ejemplos del proyecto"
               >
                 {examples.map((example) => {
@@ -181,7 +206,7 @@ export const ExamplesGallery = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className={`rounded-md border px-3 py-2.5 text-left transition cursor-pointer ${isActive
                         ? 'border-cyan-300 bg-cyan-300 text-slate-950 shadow-lg shadow-cyan-950/40'
-                        : 'border-white/15 bg-white/[0.04] text-slate-200 hover:border-cyan-300/70 hover:bg-white/10'
+                        : 'border-white/15 bg-white/4 text-slate-200 hover:border-cyan-300/70 hover:bg-white/10'
                         }`}
                     >
                       <span
