@@ -47,12 +47,13 @@ certificaciones.
 | Contador con `useMemo` | `useMemo`, cálculos costosos, dependencias y optimización de renderizado |
 | Comentarios optimistas | `useOptimistic`, `useTransition`, actualización optimista y reversión de estado |
 | Información de cliente | `use`, `Suspense`, promesas, fallback de carga y datos asíncronos |
+| Perfil profesional | `useContext`, Context API, rutas privadas, login simulado y persistencia de sesión |
 | Galería de ejemplos | Navegación por hash y componentes dinámicos |
 
 La galería permite cambiar entre ejercicios sin editar ni comentar código.
 También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
 `#use-reducer`, `#scramble-us-state`, `#scramble-reducer`, `#react-memo` y
-`#use-memo`, `#use-optimistic` y `#use-suspense`.
+`#use-memo`, `#use-optimistic`, `#use-suspense` y `#use-context`.
 
 ## Tecnologías
 
@@ -62,6 +63,7 @@ También genera rutas compartibles como `#use-state`, `#pokemon`, `#use-ref`,
 - Tailwind CSS
 - shadcn/ui
 - Lucide React
+- React Router
 - Zod
 - Canvas Confetti
 - Sonner
@@ -114,6 +116,11 @@ src/
 |-- 07-useOptimistic/  # Ejercicio de UI optimista con comentarios
 |-- 08-use-suspense/   # Ejercicio de Suspense y carga de datos
 |   |-- api/           # Acciones simuladas para obtener información
+|-- 09-useContext/     # Context API, login simulado y rutas privadas
+|   |-- context/       # Provider y contexto de usuario
+|   |-- data/          # Datos mock para usuarios
+|   |-- pages/         # Vistas de login, perfil y página principal
+|   |-- router/        # Configuración de rutas y guard privado
 |-- components/ui/     # Componentes base de shadcn/ui
 |-- hooks/             # Custom Hooks reutilizables
 |-- ExamplesGallery.tsx
@@ -134,12 +141,15 @@ src/
 - Identificar cuándo una función o cálculo debe memorizarse según sus dependencias.
 - Crear experiencias de UI optimista con `useOptimistic` y manejar reversión de estado.
 - Cargar datos asíncronos con `use`, `Suspense` y fallbacks de espera.
+- Compartir estado global con Context API y consumirlo con `useContext`/`use`.
+- Proteger rutas con un guard basado en estado de autenticación.
+- Persistir una sesión simulada en `localStorage`.
 - Consumir APIs y representar estados de carga y error.
 - Organizar ejemplos en una aplicación fácil de explorar y compartir.
 
 ## Próximos pasos
 
-- [ ] Incorporar Context API.
+- [x] Incorporar Context API.
 - [ ] Añadir pruebas automatizadas.
 - [ ] Mejorar el manejo de errores de las peticiones.
 - [ ] Publicar una demo en línea.

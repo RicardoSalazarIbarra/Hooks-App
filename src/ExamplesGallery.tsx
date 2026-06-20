@@ -14,6 +14,7 @@ import { MemoCounter } from './06-memos/MemoCounter'
 import { InstagromApp } from './07-useOptimistic/InstagromApp'
 import { ClientInformation } from './08-use-suspense/ClientInformation'
 import { getUserAction } from './08-use-suspense/api/get-user.action'
+import { ProfessionalApp } from './09-useContext/ProfessionalApp'
 
 type Example = {
   id: string
@@ -122,6 +123,13 @@ const examples: Example[] = [
       </Suspense>,
     // component: () => <ClientInformation id={100} />,
     group: 'React 19',
+  },
+  {
+    id: 'use-context',
+    title: 'useContext',
+    description: 'Sesión, rutas privadas y estado global',
+    component: ProfessionalApp,
+    group: 'Context API',
   },
 ]
 
